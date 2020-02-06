@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
+
 namespace  AspNetCoreApp.Models.DB
 {
     
@@ -26,3 +26,4 @@ namespace  AspNetCoreApp.Models.DB
         public virtual List<Empregado> Empregados {get; set; }
 
     }
+}

@@ -1,28 +1,36 @@
 using System;
-using System.Data.Entity;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Configuration;
 
 namespace  AspNetCoreApp.Models.DB
 {
     
     public partial class RH : DbContext
     {
-        public RH()
-            : base("name=RH")
+        public IConfiguration Configuration { get; }
+
+        public RH(IConfiguration configuration)
         {
+            Configuration = configuration;
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        { 
+            optionsBuilder.UseSqlServer(Configuration["ConnectionString"]);
         }
 
         public virtual DbSet<Empregado> EMPREGADOS { get; set; }
         
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             
             modelBuilder.Entity<Departamento>()
-                .HasMany(e => e.Empregados)
-                .WithOptional(e => e.Depart)
-                .HasForeignKey(e => e.NroDepartamento);
+                .HasMany<Empregado>(x => x.Empregados)
+                .WithOne(m => m.Depart)
+                .HasForeignKey(u => u.NroDepartamento);
         }
     }
 }
