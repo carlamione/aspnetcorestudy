@@ -22,7 +22,10 @@ namespace  AspNetCoreApp.Models.DB
             optionsBuilder.UseSqlServer(Configuration["ConnectionString"]);
         }
 
-        public virtual DbSet<Empregado> EMPREGADOS { get; set; }
+        public virtual DbSet<Empregado> Empregados { get; set; }
+
+        public virtual DbSet<Departamento> Departamentos { get; set; }
+
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
