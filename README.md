@@ -1,5 +1,4 @@
-# aspnetcorestudy
-## Asp Net Core Study Dot.Net Core
+# Asp Net Core Study Dot.Net Core
 
 Este projeto é um estudo de .Net Core.
 
@@ -16,11 +15,12 @@ Este projeto é um estudo de .Net Core.
 9.  dotnet-ef database update
 10. dotnet run
 
-11. adicionar as views que permitam fazer o crud
-12. adicionar o código de backend para fazer o crud funcionar
-13. melhorar as views usando layouts e partials views
-14. melhorar as views usando bootstrap
-15. melhorar as views usando algum tema
+11. [fazendo] adicionar as views que permitam fazer o crud
+12. [fazendo] adicionar o código de backend para fazer o crud funcionar
+
+13. [todo] melhorar as views usando layouts e partials views
+14. [todo] melhorar as views usando bootstrap
+15. [todo] melhorar as views usando algum tema
 
 
 ### Lista de Passos para usar esse projeto
